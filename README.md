@@ -14,14 +14,14 @@ plugins:
         - event: onPostBuild
           type: email
           to: david@netlify.com
-          subject: 'Your site is ready!'
-          message: 'Horray!'
+          subject: Your site is ready!
+          message: Yay!
         - event: onPostBuild
           type: sms
           to: '222-222-2222'
           message: 'Your build is published!'
         - event: onError
           type: webhook
-          endpoint: 'https://my-webhook-endpoint.com/api'
-          message: 'Your site build failed sorry charlie'
+          endpoint: https://my-webhook-endpoint.com/api
+          message: Your site build failed sorry charlie
 ```
