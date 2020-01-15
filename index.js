@@ -1,9 +1,11 @@
 const TwilioSdk = require('twilio')
 
-module.exports = function netlifyNotifyPlugin(pluginConfig) {
-  const { notices, sms, email, webhook } = pluginConfig
+module.exports = function netlifyNotifyPlugin(conf) {
+  const { notices, sms, email, webhook } = conf
 
-  const plugin = { name: '@netlify/plugin-notifier' }
+  const plugin = {
+    name: '@netlify/plugin-notifier'
+  }
 
   if (!notices) {
     console.log(`No notices found on "@netlify/plugin-notifier" plugin configuration`)
@@ -52,10 +54,12 @@ module.exports = function netlifyNotifyPlugin(pluginConfig) {
 
 function sendEmail() {
   // Todo implement email sends
+  console.log('send email')
 }
 
 function sendWebhook() {
   // Todo implement API requests with retry logic
+  console.log('send webhook')
 }
 
 /*

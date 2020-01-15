@@ -2,13 +2,20 @@
 
 Send messages during different build lifecycle events
 
+## Install
+
+```
+npm install @netlify/plugin-notifier
+```
+
 ## Usage:
 
 `notices` is an array of notices to send.
 
 ```yml
+# in netlify.yml
 plugins:
-  - type: '@netlify/plugin-notifier'
+  - package: '@netlify/plugin-notifier'
     config:
       notices:
         - event: onPostBuild
@@ -18,7 +25,7 @@ plugins:
           message: Yay!
         - event: onPostBuild
           type: sms
-          to: '222-222-2222'
+          to: 222-222-2222
           message: 'Your build is published!'
         - event: onError
           type: webhook
